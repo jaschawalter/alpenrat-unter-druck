@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f6f1e5">
+<title>Alpenrat unter Druck</title>
+<link rel="stylesheet" href="style.css">
+<script defer src="beschluesse.js"></script>
+<script defer src="spiel.js"></script>
+</head>
+<body>
+<svg class="symbols" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<symbol id="mountain" viewBox="0 0 24 24"><path d="m2 19 7-13 4 7 3-5 6 11H2Z"/><path d="m6 12 3 2 3-2m2 1 2 2 2-2"/></symbol>
+<symbol id="jobs" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V4h8v3M3 12l9 3 9-3m-9 1v3"/></symbol>
+<symbol id="nature" viewBox="0 0 24 24"><path d="M20 4C10 3 4 8 5 15c2 5 13 4 15-11ZM4 20l10-9"/></symbol>
+<symbol id="life" viewBox="0 0 24 24"><path d="M12 20 4 12a5 5 0 0 1 8-6 5 5 0 0 1 8 6Z"/></symbol>
+<symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+</svg>
+<header class="masthead">
+  <div class="brand"><span class="crest"><svg><use href="#mountain"/></svg></span><div><span class="eyebrow">GEOGRAFIE · KLASSE 6</span><h1>Alpenrat unter Druck</h1></div></div>
+  <div class="nav-actions"><button id="help" class="outline">Spielregeln</button><button id="reset" class="outline" hidden>Neustart</button></div>
+</header>
+<main>
+  <section class="atlas" aria-labelledby="village-title">
+    <div class="atlas-header"><div><span class="eyebrow">DEIN ALPENDORF</span><h2 id="village-title">Tannenbrunn</h2></div><strong id="year" class="year">1950</strong></div>
+    <div class="map" id="map">
+      <img class="landscape" src="assets/tannenbrunn.webp" alt="Illustrierte Alpenlandschaft mit Bergwald, Wiesen und einem kleinen Dorf">
+      <div id="features" class="features"></div>
+      <div class="map-label" id="map-label">Bauernhöfe und Bergwald</div>
+    </div>
+    <div class="timeline"><span>1950</span><div id="steps" class="steps" aria-hidden="true"></div><span>2002</span></div>
+    <div class="metrics" id="metrics"></div>
+  </section>
+  <section class="desk" id="desk" aria-label="Bürgermeisteramt"></section>
+</main>
+<dialog id="rules">
+  <h2>So spielst du</h2>
+  <ul><li>Du bist Bürgermeister von Tannenbrunn. Triff 15 Beschlüsse von 1950 bis 2002.</li><li>Vor der Wahl zeigen die drei Zahlen, was sich sofort bei Arbeitsplätzen, Natur und Lebensqualität ändert.</li><li>Nach der Wahl erklärt Murmel die Folgen. Manche zeigen sich erst in einer späteren Runde.</li><li>Die Balken sind Spielwerte von 0 bis 100. Im Dorfbericht siehst du zwei Erfolge und eine offene Baustelle.</li></ul>
+  <form method="dialog"><button class="primary">Alles klar</button></form>
+</dialog>
+<dialog id="restart-dialog"><h2>Neu beginnen?</h2><p>Deine bisherigen Beschlüsse werden zurückgesetzt.</p><form method="dialog" class="dialog-actions"><button class="outline" value="cancel">Weiterspielen</button><button class="primary" value="restart">Neu beginnen</button></form></dialog>
+<template id="reporter"><aside class="reporter"><span class="avatar" aria-hidden="true"><img src="assets/murmel.webp" alt=""></span><div><span class="eyebrow">MURMEL · DORFREPORTER</span><p></p></div></aside></template>
+</body>
+</html>
